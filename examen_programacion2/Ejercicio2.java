@@ -12,6 +12,13 @@ public class Ejercicio2 {
 		palabrasMasLargasQue(numero);
 		
 	}
+	/**
+	 * pree:--
+	 * post: crearemos un metodo que con el numero entero que yo le de me saque las palabras con esa longuitud o mayor.
+	 * 		primero remplazo las cosas que me puedan molestar con el replaceAll, luego agarro cada bloque de espacio en espacio,
+	 * 		luego creo un for que me recorra de bloque en bloque hasta completar la linea y comparar si es mayor o menor que la longuitud enviada 
+	 * 		si es mayor lo mostraremos por pantalla y nos aparecera un contador diciendo cuantas palabras a sido posible encontrar.
+	 */
 	public static void palabrasMasLargasQue(int longitud) {
 		String fichero1="C:/Users/quind/Downloads/textoExamen.txt";
 		File file = new File (fichero1);
