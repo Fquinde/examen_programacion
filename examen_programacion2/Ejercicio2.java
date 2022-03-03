@@ -15,17 +15,22 @@ public class Ejercicio2 {
 	public static void palabrasMasLargasQue(int longitud) {
 		String fichero1="C:/Users/quind/Downloads/textoExamen.txt";
 		File file = new File (fichero1);
+		int contador = 0;
 		try {
 			Scanner f = new Scanner(file);
 			while(f.hasNextLine()) {
 				String linea = f.nextLine();
-				linea = linea.replaceAll(",","").replaceAll(".", "").replaceFirst("''", "");
+				linea = linea.replaceAll("\\(","").replaceAll("\\.", "").replaceAll("\"", "").replaceAll(",", "")
+                        .replaceAll("\\)", "").replaceAll(",", "").replaceAll("\"", "");
 				String[] lineaSep = linea.split(" ");
-				for(int x=0; x<linea.length(); x++)
-				if(lineaSep[x].length()<=longitud) {
-					System.out.println(lineaSep[x]);
+				for(int i=0; i<lineaSep.length; i++) {
+					if(lineaSep[i].length() >=longitud) {
+						contador++;
+						System.out.println(lineaSep[i]);
+					}
 				}
 			}
+			System.out.println("Palabras encontradas:" + contador);
 		}catch(FileNotFoundException e){
 		}
 	}
